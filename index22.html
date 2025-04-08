@@ -70,75 +70,100 @@
       background-color: rgba(247, 127, 0, 1);
     }
 
-button {
-    
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    background: transparent;
-    padding: 0;
-    font-size: inherit;
-    font-family: inherit;
-    bottom: 40px;
-      right: 40px;
-   }
-   
-   button.learn-more {
-    width: 12rem;
-    height: auto;
-    position: fixed;
-    bottom: 20px;
-  right: -100px;
-  z-index: 0;
-   }
-  
-   
-   button.learn-more .circle {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: relative;
-    display: block;
-    margin: 0;
-    width: 3rem;
-    height: 3rem;
-    background: rgba(247, 127, 0, 1);
-    border-radius: 1.625rem;
-   }
-   
-   button.learn-more .circle .icon {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    background: white;
-  }
-   
-   button.learn-more .circle .icon.arrow {
-    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-    left: 0.625rem;
-    width: 1.125rem;
-    height: 0.125rem;
-    background: none;
-   }
-   
-   button.learn-more .circle .icon.arrow::before {
-    position: absolute;
-    content: "";
-    top: -0.29rem;
-    right: 0.0625rem;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-top: 0.125rem solid #fff;
-    border-right: 0.125rem solid #fff;
-    transform: rotate(45deg);
-   }
-   
-   
+    button {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      outline: none;
+      border: 0;
+      vertical-align: middle;
+      text-decoration: none;
+      background: transparent;
+      padding: 0;
+      font-size: inherit;
+      font-family: inherit;
+    }
 
+    button.learn-more {
+      width: 12rem;
+      height: auto;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1;
+    }
+
+    button.learn-more .circle {
+      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 3rem;
+      height: 3rem;
+      background: rgba(247, 127, 0, 1);
+      border-radius: 1.625rem;
+    }
+
+    button.learn-more .circle .icon {
+      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      background: white;
+    }
+
+    button.learn-more .circle .icon.arrow {
+      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+      left: 0.625rem;
+      width: 1.125rem;
+      height: 0.125rem;
+      background: none;
+    }
+
+    button.learn-more .circle .icon.arrow::before {
+      position: absolute;
+      content: "";
+      top: -0.29rem;
+      right: 0.0625rem;
+      width: 0.625rem;
+      height: 0.625rem;
+      border-top: 0.125rem solid #fff;
+      border-right: 0.125rem solid #fff;
+      transform: rotate(45deg);
+    }
+
+    /* Media Query for Mobile Devices */
+    @media (max-width: 767px) {
+      .bus-image {
+        width: 90%; /* تكبير الصورة في الموبايل */
+        max-width: 350px;
+      }
+
+      .text-block h1 {
+        font-size: 28px; /* تكبير النص */
+      }
+
+      .text-block p {
+        font-size: 18px; /* تكبير النص */
+      }
+
+      .indicators .dot {
+        width: 15px; /* تكبير النقاط */
+        height: 15px;
+      }
+
+      button.learn-more {
+        width: 14rem; /* تكبير الزر */
+        bottom: 30px;
+        right: 30px;
+      }
+
+      button.learn-more .circle {
+        width: 3.5rem; /* تكبير الزر الدائري */
+        height: 3.5rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -157,12 +182,14 @@ button {
     <div class="dot"></div>
     <div class="dot"></div>
   </div>
-<button class="learn-more">
-  <a href="index23.html">
-    <span class="circle" aria-hidden="true">
-    <span class="icon arrow"></span>
-    </span>
+
+  <button class="learn-more">
+    <a href="index23.html">
+      <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+      </span>
+    </a>
   </button>
-  </a>
+
 </body>
 </html>
