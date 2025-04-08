@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MoveEZ</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 100vh;
+      position: relative;
+    }
+
+    .skip {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 14px;
+      color: black;
+      text-decoration: none;
+    }
+
+    .bus-image {
+      margin-top: 80px;
+      width: 70%;
+      max-width: 400px;
+    }
+
+    .text-block {
+      text-align: center;
+      margin: 30px 20px 0 20px;
+    }
+
+    .text-block h1 {
+      margin: 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .text-block span {
+      color: rgba(247, 127, 0, 1);
+    }
+
+    .text-block p {
+      margin-top: 10px;
+      font-size: 16px;
+      color: #333;
+    }
+
+    .indicators {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      gap: 8px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ccc;
+    }
+
+    .dot.active {
+      background-color: rgba(247, 127, 0, 1);
+    }
+
+button {
+    
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    bottom: 40px;
+      right: 40px;
+   }
+   
+   button.learn-more {
+    width: 12rem;
+    height: auto;
+    position: fixed;
+    bottom: 20px;
+  right: -100px;
+  z-index: 0;
+   }
+  
+   
+   button.learn-more .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: rgba(247, 127, 0, 1);
+    border-radius: 1.625rem;
+   }
+   
+   button.learn-more .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: white;
+  }
+   
+   button.learn-more .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+   }
+   
+   button.learn-more .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+   }
+   
+   
+
+  </style>
+</head>
+<body>
+
+  <a href="getstarted.html" class="skip">Skip</a>
+
+  <img src="Frame 8.png" alt="Bus Image" class="bus-image">
+
+  <div class="text-block">
+    <h1>Welcome to <span>MoveEZ!</span></h1>
+    <p>Getting your day-to-day<br>bus travel updates is now<br>just a matter of new clicks!</p>
+  </div>
+
+  <div class="indicators">
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+<button class="learn-more">
+  <a href="index23.html">
+    <span class="circle" aria-hidden="true">
+    <span class="icon arrow"></span>
+    </span>
+  </button>
+  </a>
+</body>
+</html>
