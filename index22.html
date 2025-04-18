@@ -20,15 +20,16 @@
       position: absolute;
       top: 20px;
       right: 20px;
-      font-size: 14px;
+      font-size: 35px;
       color: black;
       text-decoration: none;
+      
     }
 
     .bus-image {
       margin-top: 80px;
-      width: 70%;
-      max-width: 400px;
+      width: 900px;
+
     }
 
     .text-block {
@@ -38,7 +39,7 @@
 
     .text-block h1 {
       margin: 0;
-      font-size: 24px;
+      font-size: 90px;
       font-weight: bold;
     }
 
@@ -48,20 +49,20 @@
 
     .text-block p {
       margin-top: 10px;
-      font-size: 16px;
+      font-size: 48px;
       color: #333;
     }
 
     .indicators {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 200px;
       gap: 8px;
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
       background-color: #ccc;
     }
@@ -85,7 +86,7 @@
     }
 
     button.learn-more {
-      width: 12rem;
+      width: 4rem;
       height: auto;
       position: fixed;
       bottom: 20px;
@@ -133,50 +134,34 @@
       transform: rotate(45deg);
     }
 
-    /* Media Query for Mobile Devices */
-    @media (max-width: 767px) {
-      .bus-image {
-        width: 90%; /* تكبير الصورة في الموبايل */
-        max-width: 350px;
-      }
-
+    @media (max-width: 768px) {
       .text-block h1 {
-        font-size: 28px; /* تكبير النص */
+        font-size: 32px;
       }
-
+    
       .text-block p {
-        font-size: 18px; /* تكبير النص */
+        font-size: 20px;
       }
-
-      .indicators .dot {
-        width: 15px; /* تكبير النقاط */
-        height: 15px;
-      }
-
-      button.learn-more {
-        width: 14rem; /* تكبير الزر */
-        bottom: 30px;
-        right: 30px;
-      }
-
-      button.learn-more .circle {
-        width: 3.5rem; /* تكبير الزر الدائري */
-        height: 3.5rem;
+    
+      .bus-image {
+        width: 90%; /* عشان يفضل مناسب */
       }
     }
+
+    
   </style>
 </head>
 <body>
 
   <a href="getstarted.html" class="skip">Skip</a>
 
-  <img src="Frame 8.png" alt="Bus Image" class="bus-image">
-
+  <img src="Welcome 1.svg" alt="Bus Image" class="bus-image">
+<br>
   <div class="text-block">
-    <h1>Welcome to <span>MoveEZ!</span></h1>
+    <h1>Welcome to<br> <span>MoveEZ!</span></h1> <br>
     <p>Getting your day-to-day<br>bus travel updates is now<br>just a matter of new clicks!</p>
   </div>
-
+<br> <br> <br>  <br> <br>
   <div class="indicators">
     <div class="dot active"></div>
     <div class="dot"></div>
