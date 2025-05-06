@@ -6,93 +6,76 @@
   <style>
     body {
       margin: 0;
-      font-family: sans-serif;
-      background: white;
-      color: black;
-    }
-
-    .container {
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
+      height: 100vh;
       position: relative;
     }
 
-    .header {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-    }
-
-    .skip-text {
-      font-size: 16px;
-      text-decoration: none;
+    .skip {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 35px;
       color: black;
-      margin-right: 20px;
+      text-decoration: none;
     }
 
-    
+    .bus-image {
+      margin-top: 80px;
+      width: 900px;
+    }
 
-    .text-section {
+    .text-block {
       text-align: center;
-      margin-top: 20px;
+      margin: 30px 20px 0 20px;
     }
 
-    .text-section h2 {
-      font-size: 24px;
+    .text-block h1 {
       margin: 0;
+      font-size: 90px;
+      font-weight: bold;
     }
 
-    .text-section .highlight {
+    .text-block span {
       color: #F28C28;
     }
 
-    .text-section p {
-      font-size: 16px;
+    .text-block p {
       margin-top: 10px;
-      line-height: 1.5;
+      font-size: 48px;
+      color: #333;
     }
 
-    .dots {
+    .indicators {
       display: flex;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 200px;
+      gap: 8px;
     }
 
     .dot {
-      height: 10px;
-      width: 10px;
-      background-color: lightgray;
+      width: 15px;
+      height: 15px;
       border-radius: 50%;
-      margin: 0 5px;
+      background-color: #ccc;
     }
 
     .dot.active {
       background-color: #F28C28;
     }
 
-    button {
-      position: relative;
-      display: inline-block;
-      cursor: pointer;
-      outline: none;
-      border: 0;
-      vertical-align: middle;
-      text-decoration: none;
-      background: transparent;
-      padding: 0;
-      font-size: inherit;
-      font-family: inherit;
-    }
-
     button.learn-more {
-      width: 12rem;
+      width: 4rem;
       height: auto;
       position: fixed;
       bottom: 20px;
-      right: -100px;
-      z-index: 0;
+      right: 20px;
+      z-index: 1;
     }
 
     button.learn-more .circle {
@@ -102,69 +85,60 @@
       margin: 0;
       width: 3rem;
       height: 3rem;
-      background: rgba(247, 127, 0, 1);
+      background: #F28C28;
       border-radius: 1.625rem;
     }
 
     button.learn-more .circle .icon.arrow {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
       position: absolute;
       top: 0;
       bottom: 0;
-      margin: auto;
       left: 0.625rem;
+      margin: auto;
       width: 1.125rem;
       height: 0.125rem;
       background: none;
     }
 
     button.learn-more .circle .icon.arrow::before {
-      position: absolute;
       content: "";
+      position: absolute;
       top: -0.29rem;
       right: 0.0625rem;
       width: 0.625rem;
       height: 0.625rem;
-      border-top: 0.125rem solid #fff;
-      border-right: 0.125rem solid #fff;
+      border-top: 0.125rem solid white;
+      border-right: 0.125rem solid white;
       transform: rotate(45deg);
     }
 
-    button.learn-more2 {
-      width: 10rem;
-      height: auto;
-      position: fixed;
-      bottom: -10px;
-      right: -100px;
-      z-index: 0;
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      transform: rotate(180deg);
     }
 
-    button.learn-more2 .circle2 {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-      position: relative;
-      display: block;
-      margin: 0;
+    .back-button .circle2 {
       width: 3rem;
       height: 3rem;
       background: transparent;
       border-radius: 1.625rem;
     }
 
-    button.learn-more2 .circle2 .icon.arrow2 {
-      transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    .back-button .circle2 .arrow2 {
       position: absolute;
       top: 0;
       bottom: 0;
-      margin: auto;
       left: 0.625rem;
+      margin: auto;
       width: 1.125rem;
       height: 0.125rem;
-      background: none;
     }
 
-    button.learn-more2 .circle2 .icon.arrow2::before {
-      position: absolute;
+    .back-button .circle2 .arrow2::before {
       content: "";
+      position: absolute;
       top: -0.29rem;
       right: 0.0625rem;
       width: 0.625rem;
@@ -173,79 +147,33 @@
       border-right: 0.125rem solid black;
       transform: rotate(45deg);
     }
-
-    .back-button {
-      width: 10rem;
-      height: auto;
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      z-index: 1;
-      transform: rotate(180deg);
-    }
-
-    .image-section {
-      margin-top: 80px;
-      width: 900px;
-      margin-left: 50%;
-      height: auto;
-
-    }
-
-
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <!-- سهم الرجوع فوق شمال -->
-    <div class="back-button">
-      <a href="index22.html">
-        <button class="learn-more2">
-          <span class="circle2" aria-hidden="true">
-            <span class="icon arrow2"></span>
-          </span>
-        </button>
-      </a>
-    </div>
+    
+  <a href="getstarted.html" class="skip">Skip</a>
 
-    <!-- زر Skip -->
-    <div class="header">
-      <span></span>
-      <a href="getstarted.html" class="skip-text">Skip</a>
-    </div>
-
-    <!-- صورة الباص -->
-    <div class="image-section">
-      <img src="Home page image (same image as Welcome 3 but in bigger size ).svg" alt="Bus Illustration">
-    </div>
-
-    <!-- النص -->
-    <div class="text-section">
-      <h2>Effortless<br><span class="highlight">Booking</span></h2>
-      <p>
-        Our seamless booking system makes reserving your seat a breeze. No more waiting in lines or last-minute-stress.
-      </p>
-    </div>
-
-    <!-- الدوائر -->
-    <div class="dots">
-      <span class="dot"></span>
-      <span class="dot active"></span>
-      <span class="dot"></span>
-    </div>
-
-    <!-- السهم اللي تحت -->
-    <div class="next-button">
-      <a href="index2.html">
-        <button class="learn-more">
-          <span class="circle" aria-hidden="true">
-            <span class="icon arrow"></span>
-          </span>
-        </button>
-      </a>
-    </div>
-
+  <div class="bus-image">
+    <img src="Home page image (same image as Welcome 3 but in bigger size ).svg" alt="Bus Illustration" style="width:100%;">
   </div>
+
+  <div class="text-block">
+    <h1>Effortless<br><span>Booking</span></h1>
+    <p>Our seamless booking system makes reserving your seat a breeze.</p>
+  </div>
+
+  <div class="indicators">
+    <span class="dot"></span>
+    <span class="dot active"></span>
+    <span class="dot"></span>
+  </div>
+
+  <button class="learn-more">
+    <span class="circle">
+      <span class="icon arrow"></span>
+    </span>
+  </button>
+
 </body>
 </html>
