@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Trip</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background-color: #f7f7f7;
+      color: #222;
+      padding-bottom: 100px;
+    }
+
+    .container {
+      padding: 20px;
+    }
+
+    .header {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    .trip-card {
+      background: linear-gradient(to right, #ff7e00, #ff9900);
+      color: white;
+      border-radius: 20px 20px 0 0;
+      padding: 15px;
+    }
+
+    .trip-code {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    .trip-details {
+      background-color: white;
+      border-radius: 0 0 20px 20px;
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .trip-details .left,
+    .trip-details .right {
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .trip-details img {
+      width: 70px;
+    }
+
+    .price-card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .price-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
+    }
+
+    .price {
+      font-weight: bold;
+      font-size: 16px;
+    }
+
+    .counter {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .counter button {
+      background-color: #eee;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .summary-card {
+      background-color: white;
+      padding: 15px;
+      border-radius: 15px;
+      font-size: 14px;
+    }
+
+    .summary-card .row {
+      display: flex;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    .total {
+      font-weight: bold;
+    }
+
+    .pay-btn {
+      position: fixed;
+      bottom: 60px;
+      left: 20px;
+      right: 20px;
+      background: linear-gradient(to right, #ff7e00, #ff9900);
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 30px;
+      font-size: 16px;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+      border-top: 1px solid #ccc;
+      font-size: 12px;
+    }
+
+    .footer div {
+      text-align: center;
+      color: #444;
+    }
+
+    .footer .active {
+      color: #ff7e00;
+    }
+
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: white;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #ccc;
+      padding: 8px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">Select trip</div>
+
+    <div class="trip-card">
+      <div><strong>Bus:</strong> LAFFA</div>
+      <div class="trip-code">Trip Code: 152 971 674</div>
+    </div>
+
+    <div class="trip-details">
+      <div class="left">
+        <div style="color: #ff7e00; font-weight: bold;">Station 1</div>
+        <div></div>
+      </div>
+      <img src="https://cdn-icons-png.flaticon.com/512/252/252025.png" alt="bus" />
+      <div class="right">
+        <div style="color: #999; font-weight: bold;">Station 3</div>
+        <div></div>
+      </div>
+    </div>
+
+    <div class="price-card">
+      <div class="price-row">
+        <div>Price</div>
+        <div class="price">EGP, 35</div>
+      </div>
+      <div class="price-row">
+        <div>Tickets</div>
+        <div class="counter">
+          <button onclick="decrease()">−</button>
+          <span id="count">2</span>
+          <button onclick="increase()">+</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="summary-card">
+      <div class="row">
+        <span>Price 2 x EGP, 35</span>
+        <span id="total">EGP, 70</span>
+      </div>
+      <div class="row" >
+        <span>Surcharge on price</span>
+        <span id="surcharge">EGP, 2</span>
+      </div>
+      <div class="row total">
+        <span>Total Amount</span>
+        <span id="amount">EGP, 72</span>
+      </div>
+    </div>
+  </div>
+
+  <button class="pay-btn" id="payBtn">Pay EGP, 72</button>
+  <p id="message"></p>
+
+  <div class="bottom-nav">
+    <div><a href="test2.html"><img src="Frame 36.png"></div></a> 
+    <div> <a href="test3.html"><img src="Frame 37.svg"></div></a> 
+    <div> <a href="test4.html"><img src="Frame 38.svg"></div></a>
+  </div>
+
+  <script>
+    let count = 2;
+    const price = 35;
+    const surcharge = 2;
+
+    function update() {
+      document.getElementById("count").innerText = count;
+      const total = count * price;
+      document.getElementById("total").innerText = `EGP, ${total}`;
+      const amount = total + surcharge;
+      document.getElementById("amount").innerText = `EGP, ${amount}`;
+      document.getElementById("payBtn").innerText = `Pay EGP, ${amount}`;
+    }
+
+    function increase() {
+      count++;
+      update();
+    }
+
+    function decrease() {
+      if (count > 1) {
+        count--;
+        update();
+      }
+    }
+
+    update();
+    window.onload = function () {
+  const trip = JSON.parse(localStorage.getItem('selectedTrip'));
+
+  if (trip) {
+    // مثال: عدلي حسب العناصر اللي عندك في الصفحة
+    document.querySelector(".trip-card").innerHTML = `
+      <div><strong>Bus:</strong> ${trip.busCode}</div>
+      <div class="trip-code">Trip Code: ${trip.tripCode}</div>
+    `;
+
+    document.querySelector(".trip-details .left").innerHTML = `
+      <div style="color: #ff7e00; font-weight: bold;">${trip.from}</div>
+      <div>${trip.fromTime}</div>
+    `;
+
+    document.querySelector(".trip-details .right").innerHTML = `
+      <div style="color: #999; font-weight: bold;">${trip.to}</div>
+      <div>${trip.toTime}</div>
+    `;
+
+    document.querySelector(".price").innerText = `EGP, ${trip.price}`;
+
+    count = trip.defaultTickets;
+    update(); // الكود اللي بيحسب العدد والفلوس
+  }
+};
+
+  document.getElementById('payBtn').addEventListener('click', () => {
+    alert('😉الكرسي بتاعك اتاخد ومستنيك  علي الآخر ');
+  });
+
+  </script>
+
+</body>
+</html>
